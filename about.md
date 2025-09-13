@@ -29,3 +29,5 @@ Your CASA WEBSITE project is now ready for Spec-Driven Development! 🎉
 Checkpoint made
 just now
 Set up project for spec-driven development
+
+TET EDIT
