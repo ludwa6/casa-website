@@ -1,0 +1,19 @@
+name: Project Automation
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add_to_project:
+    if: contains(github.event.issue.labels.*.name, 'from-spec')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      projects: write
+    steps:
+      - name: Add issue to project board
+        uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/users/ludwa6/projects/1
+          github-token: ${{ secrets.PROJECTS_TOKEN }}

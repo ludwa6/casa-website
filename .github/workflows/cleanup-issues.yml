@@ -1,0 +1,85 @@
+name: Cleanup Auto-generated Issues
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Set to true to actually close matching issues'
+        required: true
+        default: 'false'
+      match_title:
+        description: 'Substring to match in issue title (case-insensitive). Default: "Task"'
+        required: false
+        default: 'Task'
+      created_by:
+        description: 'Issue author login to filter by (optional). Leave blank to ignore.'
+        required: false
+        default: ''
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Dry run - list matching open issues
+        uses: actions/github-script@v7
+        id: list
+        with:
+          github-token: ${{ secrets.PROJECTS_TOKEN }}
+          script: |
+            const matchTitle = `${{ github.event.inputs.match_title }}`.trim();
+            const createdBy  = `${{ github.event.inputs.created_by }}`.trim();
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const matches = issues.filter(issue => {
+              const titleOk = matchTitle ? issue.title.toLowerCase().includes(matchTitle.toLowerCase()) : false;
+              const authorOk = createdBy ? (issue.user && issue.user.login === createdBy) : false;
+              const fallbackOk = (!matchTitle && !createdBy) ? issue.title.toLowerCase().includes('task') : false;
+              return (matchTitle && titleOk) || (createdBy && authorOk) || fallbackOk;
+            });
+            console.log(`Found ${matches.length} matching open issues:`);
+            for (const m of matches) {
+              console.log(`#${m.number} - ${m.title} (created by ${m.user && m.user.login})`);
+            }
+            return { found: matches.length, numbers: matches.map(m => m.number).join(',') };
+
+      - name: Close matched issues (only if confirmed)
+        if: ${{ github.event.inputs.confirm == 'true' }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECTS_TOKEN }}
+          script: |
+            const sleep = ms => new Promise(r => setTimeout(r, ms));
+            const matchTitle = `${{ github.event.inputs.match_title }}`.trim();
+            const createdBy  = `${{ github.event.inputs.created_by }}`.trim();
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const matches = issues.filter(issue => {
+              const titleOk = matchTitle ? issue.title.toLowerCase().includes(matchTitle.toLowerCase()) : false;
+              const authorOk = createdBy ? (issue.user && issue.user.login === createdBy) : false;
+              const fallbackOk = (!matchTitle && !createdBy) ? issue.title.toLowerCase().includes('task') : false;
+              return (matchTitle && titleOk) || (createdBy && authorOk) || fallbackOk;
+            });
+            console.log(`Closing ${matches.length} issues...`);
+            for (const m of matches) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: m.number,
+                state: 'closed'
+              });
+              console.log(`Closed #${m.number}`);
+              await sleep(1500); // sleep 1.5 seconds to avoid secondary rate limit
+            }
+            return { closed: matches.length };
+
