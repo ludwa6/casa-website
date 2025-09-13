@@ -1,57 +1,88 @@
-# CASA Website
+# CASA Website - Spec-Driven Development
 
 ## Overview
-A professional website for CASA, featuring a modern, responsive design with smooth navigation and interactive elements. This project serves as a foundation for the CASA website with a clean, professional layout suitable for business use.
+A CASA website project configured for Spec-Driven Development (SDD) using GitHub's open-source Spec Kit. This project enables you to build professional web applications through a structured specification-first approach with AI assistance.
 
 ## Current State
-- **Status**: Fully functional and ready for development
-- **Technology**: Static HTML/CSS/JavaScript with Python HTTP server
-- **Deployment**: Configured for Replit autoscale deployment
-- **Port**: 5000 (frontend)
+- **Status**: SDD Environment ready and configured
+- **Technology**: GitHub Spec Kit with Claude AI integration
+- **Workflow**: `/specify` → `/plan` → `/tasks` → Implementation
+- **Constitution**: CASA-specific development principles established
 
 ## Recent Changes
-- **September 13, 2025**: Initial setup and import to Replit
-  - Created responsive HTML website structure
-  - Implemented modern CSS styling with animations
-  - Added interactive JavaScript functionality
-  - Set up Python HTTP server with proper cache control
-  - Configured workflow and deployment settings
+- **September 13, 2025**: GitHub Spec Kit installation and configuration
+  - Installed uvx and GitHub Spec Kit successfully
+  - Configured Claude AI assistant for SDD workflow
+  - Created CASA-specific project constitution
+  - Set up SDD environment with workflow demonstration
+  - Organized project structure for specification-driven development
 
-## Project Architecture
+## Spec-Driven Development Architecture
 
-### Frontend Structure
-- `index.html` - Main website page with all sections
-- `styles.css` - Modern responsive CSS with animations
-- `script.js` - Interactive JavaScript for navigation and forms
+### SDD Command Structure
+- `/specify` - Create feature specifications from natural language descriptions
+- `/plan` - Generate technical implementation plans from specifications
+- `/tasks` - Break down plans into actionable development tasks
 
-### Backend
-- `server.py` - Python HTTP server configured for Replit
-  - Serves static files on port 5000
-  - Includes cache control headers
-  - Configured to bind to 0.0.0.0 for Replit proxy compatibility
+### Project Organization
+```
+.specify/
+├── memory/
+│   ├── constitution.md                 - CASA project principles & constraints
+│   └── constitution_update_checklist.md
+├── scripts/bash/                       - SDD workflow automation scripts
+└── templates/                          - Specification and plan templates
 
-### Key Features
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Interactive contact form
-- Service cards with hover animations
-- Professional color scheme and typography
-- SEO-friendly structure
+.claude/
+└── commands/                           - SDD command definitions for Claude
+```
+
+### SDD Workflow Process
+1. **Specify**: Describe what you want to build in natural language
+2. **Plan**: Provide technical direction and generate detailed implementation plans
+3. **Tasks**: Generate dependency-ordered, actionable development tasks
+4. **Implement**: Code with AI assistance following specifications
+
+## CASA Constitution Highlights
+- **User-Centric Design**: Accessibility and UX priority
+- **Professional Standards**: Business-appropriate quality
+- **Responsive-First**: Mobile-first approach (NON-NEGOTIABLE)
+- **Performance Optimization**: <3 second load times
+- **SEO & Accessibility**: WCAG 2.1 AA compliance required
 
 ## Development Notes
-- Server is configured to prevent caching issues in Replit environment
-- All static assets are served with proper MIME types
-- Website uses modern CSS Grid and Flexbox for layout
-- JavaScript includes intersection observer for scroll animations
+- SDD environment running on Python with console output
+- All specifications follow constitutional constraints
+- Test-driven development integrated into task generation
+- Cross-device compatibility mandatory for all features
 
 ## User Preferences
-- Clean, professional design aesthetic
-- Responsive mobile-first approach
-- Modern web standards and best practices
+- Specification-driven development methodology
+- Constitutional compliance for all features
+- Professional web development standards
+- AI-assisted implementation with clear specifications
 
-## Next Steps
-The website is now fully functional and ready for:
-1. Content customization for specific CASA needs
-2. Additional pages or sections as required
-3. Integration with backend services if needed
-4. SEO optimization and analytics integration
+## Next Steps - Getting Started with SDD
+1. **Start Specifying**: Use `/specify` to describe your first feature
+   Example: `/specify Build a professional homepage with hero section, about us, and contact form`
+
+2. **Generate Plans**: Use `/plan` to add technical direction
+   Example: `/plan Use modern CSS Grid layout with vanilla JavaScript`
+
+3. **Create Tasks**: Use `/tasks` to generate actionable development steps
+   Example: `/tasks Generate specific implementation tasks`
+
+4. **Begin Implementation**: Follow the generated tasks with AI assistance
+
+## Example SDD Workflow
+```
+/specify Build a professional website for CASA with modern design,
+         contact forms, service showcase, and mobile responsiveness
+
+/plan Use HTML5, CSS3, and vanilla JavaScript. Focus on performance
+      and accessibility. Include form validation and smooth animations.
+
+/tasks Generate dependency-ordered tasks for implementation
+```
+
+The SDD environment is ready! Start by describing what you want to build using the `/specify` command.
