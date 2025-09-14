@@ -1,11 +1,11 @@
 # Casa Website — Project Overview
 
 ## Project Purpose
-A modern, mobile-first website for Casa [hotel/restaurant name], designed to showcase our hospitality, drive direct bookings, and strengthen our brand identity online.
+A modern, mobile-first website for Casa Vale da Lama (.com), designed to improve visibility of the hotel and restaurant, showcase our hospitality, drive direct bookings and event inquiries, and strengthen our brand identity online.
 
-## Primary Goals / KPIs
-- Increase direct bookings by 15% within 6 months of launch.
-- Reduce reliance on OTAs (Booking.com, Expedia, etc.) by improving direct channel share.
+## Primary Goals
+- Drive 75% capacity utilization of hotel and resttaurant facilities for summmer of 2026
+- Increase direct bookings as share of total hookings, reducing reliance on OTAs (Booking.com, Expedia, etc.)
 - Provide a clear, elegant digital presence that reflects our in-person guest experience.
 - Build a foundation for future integration with guest app / loyalty features.
 
@@ -13,6 +13,11 @@ A modern, mobile-first website for Casa [hotel/restaurant name], designed to sho
 - **Guests**: prospective visitors researching accommodation and dining.
 - **Locals**: restaurant patrons, event attendees, and repeat customers.
 - **Event Bookers**: individuals or businesses looking to host private events.
+
+## KPIs
+- Conversion rate from homepage to booking engine > 25%.
+- Bounce rate < 40%.
+- SEO keyword ranking improvements (top 3 for “[Casa + city] hotel”).
 
 ## Constraints
 - Launch target: **Spring 2026** (before high season).
