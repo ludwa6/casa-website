@@ -14,10 +14,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Extract title from markdown
-        id: extract_title
+      - name: Find changed task file
+        id: find_file
         run: |
-          file=$(git diff --name-only HEAD~1 HEAD | grep '^tasks/.*\.md$' | head -n 1)
+          file=$(jq -r '.commits[].modified[], .commits[].added[]' < $GITHUB_EVENT_PATH | grep '^tasks/.*\.md$' | head -n 1 || true)
+          if [ -z "$file" ]; then
+            echo "No task file changed."
+            exit 1
+          fi
           title=$(grep -m 1 '^# ' "$file" | sed 's/^# //')
           echo "file=$file" >> $GITHUB_OUTPUT
           echo "title=$title" >> $GITHUB_OUTPUT
@@ -25,6 +29,6 @@ jobs:
       - name: Create issue from task file
         uses: peter-evans/create-issue-from-file@v4
         with:
-          title: ${{ steps.extract_title.outputs.title }}
-          content-filepath: ${{ steps.extract_title.outputs.file }}
+          title: ${{ steps.find_file.outputs.title }}
+          content-filepath: ${{ steps.find_file.outputs.file }}
           token: ${{ secrets.PROJECTS_TOKEN }}
