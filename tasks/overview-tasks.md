@@ -1,6 +1,7 @@
 # Tasks for Overview
 
 ## 📋 Generated from: specs/overview.md
+**Last Updated**: Sun Sep 14 02:38:50 PM UTC 2025
 
 ### 🎯 Overview
 Based on the specification for overview, here are the actionable development tasks:
@@ -27,5 +28,6 @@ Based on the specification for overview, here are the actionable development tas
 - [ ] **T015**: Create deployment checklist
 
 ---
-**Generated**: Sun Sep 14 12:15:23 PM UTC 2025
+**Generated**: Sun Sep 14 02:38:50 PM UTC 2025
 **Source**: specs/overview.md
+**Spec Modified**: 2025-09-14 14:38:49.728500027 +0000
