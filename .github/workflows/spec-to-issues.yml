@@ -1,34 +1,3 @@
-name: Spec to Issues
-
-on:
-  push:
-    paths:
-      - 'tasks/*.md'
-
-jobs:
-  create_issues:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Extract title from markdown
-        id: extract_title
-        run: |
-          title=$(grep -m 1 '^# ' tasks/sample-task.md | sed 's/^# //')
-          echo "title=$title" >> $GITHUB_OUTPUT
-
-      - name: Create or update issue from task file
-        uses: peter-evans/create-or-update-issue-from-file@v4
-        with:
-          title: ${{ steps.extract_title.outputs.title }}
-          content-filepath: tasks/sample-task.md
-          token: ${{ secrets.PROJECTS_TOKEN }}
-          assignees: ludwa6
-          labels: from-spec
 name: Spec → Issues
 
 on:
