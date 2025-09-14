@@ -20,6 +20,10 @@ A modern, mobile-first website for Casa [hotel/restaurant name], designed to sho
 - Must integrate with our existing PMS/booking engine (Host or Cloudbeds).
 - Must adhere to our Brand Kit guidelines (logo, typography, color palette in PDF).
 
+## Brand Kit
+Full Brand Guidelines (PDF, ~80MB) in Dropbox at: [[Link to file](https://www.dropbox.com/home/Casa%20Vale%20da%20Lama%20Branding)]
+
+
 ## Next Steps
 - Translate this overview into detailed feature specs (homepage, booking flow, restaurant, events).
 - Break features into `specs/*.md` files (using `spec-template.md` as scaffold).
