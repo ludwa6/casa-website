@@ -15,5 +15,5 @@ jobs:
       - name: Add issue to project board
         uses: actions/add-to-project@v0.5.0
         with:
-          project-url: https://github.com/users/ludwa6/projects/1
+          project-url: https://github.com/users/ludwa6/projects/2
           github-token: ${{ secrets.PROJECTS_TOKEN }}
