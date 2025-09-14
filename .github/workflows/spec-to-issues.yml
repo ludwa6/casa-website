@@ -29,3 +29,33 @@ jobs:
           token: ${{ secrets.PROJECTS_TOKEN }}
           assignees: ludwa6
           labels: from-spec
+name: Spec → Issues
+
+on:
+  push:
+    paths:
+      - 'tasks/*.md'
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Extract title from markdown
+        id: extract_title
+        run: |
+          file=$(git diff --name-only HEAD~1 HEAD | grep '^tasks/.*\.md$' | head -n 1)
+          title=$(grep -m 1 '^# ' "$file" | sed 's/^# //')
+          echo "file=$file" >> $GITHUB_OUTPUT
+          echo "title=$title" >> $GITHUB_OUTPUT
+
+      - name: Create issue from task file
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: ${{ steps.extract_title.outputs.title }}
+          content-filepath: ${{ steps.extract_title.outputs.file }}
+          token: ${{ secrets.PROJECTS_TOKEN }}

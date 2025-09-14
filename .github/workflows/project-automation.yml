@@ -2,17 +2,16 @@ name: Project Automation
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited, closed, reopened, labeled]
 
 jobs:
-  add_to_project:
-    if: contains(github.event.issue.labels.*.name, 'from-spec')
+  sync:
     runs-on: ubuntu-latest
     permissions:
       issues: write
       projects: write
     steps:
-      - name: Add issue to project board
+      - name: Sync issue to project
         uses: actions/add-to-project@v0.5.0
         with:
           project-url: https://github.com/users/ludwa6/projects/2
