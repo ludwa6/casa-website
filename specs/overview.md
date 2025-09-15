@@ -26,7 +26,7 @@ A modern, mobile-first website for Casa Vale da Lama (.com), designed to improve
 - Must adhere to our Brand Kit guidelines (logo, typography, color palette in PDF).
 
 ## Brand Kit
-Full Brand Guidelines (PDF, ~80MB) in Dropbox at: [[Link to file](https://www.dropbox.com/home/Casa%20Vale%20da%20Lama%20Branding)]
+Full Brand Guidelines (PDF, ~80MB) in Dropbox at: [[full kit](https://www.dropbox.com/home/Casa%20Vale%20da%20Lama%20Branding)], [[PDF only](https://www.dropbox.com/scl/fi/sbimrvcyn5pgnuzzcvvze/MANUAL-VALE-DA-LAMA_08.09.2025.pdf?rlkey=vjrwbqd55q8hvhp2wwu05ied9&st=6xangv9r&dl=0)]
 
 
 ## Next Steps
