@@ -1,5 +1,9 @@
 # WordPress vs WebFlow: Platform Decision Analysis
 
+> **DECISION MADE (December 2024):** WebFlow selected. See [webflow-decision-final.md](./webflow-decision-final.md) for complete analysis of final decision based on developer's detailed response addressing AI discoverability concerns.
+
+---
+
 **Date:** December 10, 2025  
 **Context:** Website relaunch decision for boutique hotel & restaurant after 2-year renovation
 
@@ -254,3 +258,9 @@ If he gives confident, specific answers, WebFlow is fine. If he seems uncertain 
 **True Success Factor**: Content quality, consistency, and proper structured data matter far more than platform choice.
 
 **Decision Framework**: Choose based on your developer's schema markup expertise and your long-term content management needs, not just platform features.
+
+---
+
+## Final Outcome
+
+See [webflow-decision-final.md](./webflow-decision-final.md) for the complete analysis of how the developer (Pedro Dinis) addressed these concerns with concrete examples from Quinta Marugo project, leading to the final WebFlow selection.
