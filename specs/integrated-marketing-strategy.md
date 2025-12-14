@@ -474,7 +474,7 @@ Example: Professional room photoshoot
 
 **Needs from Team:**
 - Account access (Instagram x3)
-- Email address (influencers@casavaledalama.com)
+- Email address (socials@casavaledalama.com)
 - Point of contact (Walt? Cati?)
 - Filming access/permissions
 - Updates on construction, events, news
@@ -618,7 +618,7 @@ Example: Professional room photoshoot
 - [ ] Confirm social media manager engagement terms
 - [ ] Review and approve this integrated strategy
 - [ ] Designate team point of contact for social manager
-- [ ] Set up influencers@casavaledalama.com email
+- [ ] Set up socials@casavaledalama.com email  DONE
 - [ ] Provide brand assets to social manager (logo, colors, style guide)
 
 ### Pedro:
@@ -687,7 +687,7 @@ From Social Manager document:
 **Social Media:**
 - Instagram accounts x3 (resort, restaurant, farm)
 - Business Manager access
-- Dedicated email (influencers@casavaledalama.com)
+- Dedicated email (socials@casavaledalama.com)
 - Content management system (Dropbox/Drive)
 - Analytics tools (native Instagram Insights)
 
